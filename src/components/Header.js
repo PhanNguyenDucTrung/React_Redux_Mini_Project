@@ -41,14 +41,14 @@ export default class Header extends Component {
                                     </NavLink>
                                 </li>
                                 <li className='nav-item dropdown'>
-                                    <a
+                                    <NavLink
+                                        to=''
                                         className='nav-link dropdown-toggle text-light'
-                                        href='#'
                                         role='button'
                                         data-bs-toggle='dropdown'
                                         aria-expanded='false'>
                                         Redux
-                                    </a>
+                                    </NavLink>
                                     <ul className='dropdown-menu'>
                                         <li>
                                             <NavLink
