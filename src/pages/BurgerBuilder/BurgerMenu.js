@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 import { addIngredient, removeIngredient } from '../../redux/reducers/burgerSlice';
 
 export class BurgerMenu extends Component {
     renderMenu = () => {
-        const { menu } = this.props;
+        const { menu, addIngredient, removeIngredient } = this.props;
         return Object.entries(menu).map(([key, value], index) => {
             return (
                 <tr key={index}>
@@ -13,14 +12,14 @@ export class BurgerMenu extends Component {
                     <td>
                         <button
                             onClick={() => {
-                                this.props.addIngredient(key);
+                                addIngredient(key);
                             }}>
                             +
                         </button>
                         <span>{this.props.burger[key]}</span>
                         <button
                             onClick={() => {
-                                this.props.removeIngredient(key);
+                                removeIngredient(key);
                             }}>
                             -
                         </button>
@@ -59,23 +58,12 @@ export class BurgerMenu extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        burger: state.burger.burger,
-        menu: state.burger.menu,
-        totalPrice: state.burger.totalPrice,
-    };
-};
+const mapStateToProps = state => ({
+    burger: state.burger.burger,
+    menu: state.burger.menu,
+    totalPrice: state.burger.totalPrice,
+});
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addIngredient: ingredient => {
-            dispatch(addIngredient(ingredient));
-        },
-        removeIngredient: ingredient => {
-            dispatch(removeIngredient(ingredient));
-        },
-    };
-};
+const mapDispatchToProps = { addIngredient, removeIngredient };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BurgerMenu);

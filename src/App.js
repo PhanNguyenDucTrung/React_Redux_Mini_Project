@@ -16,10 +16,6 @@ import BurgerBuilder from './pages/BurgerBuilder/BurgerBuilder.js';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
 export default class App extends Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-    }
     render() {
         return (
             <Provider store={store}>
