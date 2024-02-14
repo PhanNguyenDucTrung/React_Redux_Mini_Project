@@ -6,7 +6,7 @@ export default class AdminTemplate extends Component {
         super(props);
         this.checkIsLogin();
         this.state = {
-            isLogin: this.isLogin(),
+            isLogin: this.checkIsLogin(),
         };
     }
     checkIsLogin = () => {

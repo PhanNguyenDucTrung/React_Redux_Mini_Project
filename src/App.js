@@ -4,7 +4,7 @@ import HomeTemplate from './templates/HomeTemplate.js';
 import UserTemplate from './templates/UserTemplate.js';
 import Home from './pages/Home.js';
 import OanTuXi from './pages/GameOanTuXi/OanTuXi.js';
-import XucXac from './pages/GameXucXac/XucXac.js';
+import GameXucXac from './pages/GameXucXac/GameXucXac.js';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart.js';
 import Todolist from './pages/Todolist/Todolist.js';
 import BauCua from './pages/GameBauCua/BauCua.js';
@@ -29,7 +29,7 @@ export default class App extends Component {
                             <Route path='redux-burger' element={<BurgerBuilder />}></Route>
                             <Route path='redux-baucua' element={<BauCua />}></Route>
                             <Route path='redux-oantuxi' element={<OanTuXi />}></Route>
-                            <Route path='redux-xucxac' element={<XucXac />}></Route>
+                            <Route path='redux-xucxac' element={<GameXucXac />}></Route>
                             <Route path='redux-shoppingcart' element={<ShoppingCart />}></Route>
                             <Route path='redux-todolist' element={<Todolist />}></Route>
                             <Route path='*' element={<Navigate to={''} />}></Route>

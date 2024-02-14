@@ -40,6 +40,11 @@ export default class Header extends Component {
                                         Link
                                     </NavLink>
                                 </li>
+                                <li className='nav-item'>
+                                    <NavLink className='nav-link text-light' to='admin'>
+                                        Admin
+                                    </NavLink>
+                                </li>
                                 <li className='nav-item dropdown'>
                                     <NavLink
                                         to=''

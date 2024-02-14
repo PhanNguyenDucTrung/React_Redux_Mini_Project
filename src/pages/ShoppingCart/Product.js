@@ -3,15 +3,8 @@ import { connect } from 'react-redux';
 import { addToCart, removeProductCart } from '../../redux/reducers/shoppingCartSlice.js';
 
 export class Product extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     // this.state = {
-    //     //     product: this.props.product,
-    //     // };
-    // }
     render() {
         const { product } = this.props;
-        // console.log(this.state.product);
 
         return (
             <div className='card'>

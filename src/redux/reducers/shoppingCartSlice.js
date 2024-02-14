@@ -5,13 +5,18 @@ const shoppingCartSlice = createSlice({
     initialState: [],
     reducers: {
         addToCart: (state, action) => {
-            const index = state.findIndex(product => product.id === action.payload.id);
-            if (index >= 0) {
-                state[index].quantity += 1;
-                return state;
+            const itemIndex = state.findIndex(item => item.id === action.payload.id);
+
+            if (itemIndex >= 0) {
+                // We're "mutating" the existing item by creating a new object based on the old one
+                state[itemIndex] = {
+                    ...state[itemIndex],
+                    quantity: state[itemIndex].quantity + 1,
+                };
+            } else {
+                // We're adding a new item to the cart
+                state.push({ ...action.payload, quantity: 1 });
             }
-            state.push(action.payload);
-            state[state.length - 1].quantity = 1;
         },
         decreaseQuantity: (state, action) => {
             const index = state.findIndex(product => product.id === action.payload);
