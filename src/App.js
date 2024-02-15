@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HomeTemplate from './templates/HomeTemplate.js';
 import UserTemplate from './templates/UserTemplate.js';
 import Home from './pages/Home.js';
-import OanTuXi from './pages/GameOanTuXi/OanTuXi.js';
+import GameOanTuXi from './pages/GameOanTuXi/GameOanTuXi.js';
 import GameXucXac from './pages/GameXucXac/GameXucXac.js';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart.js';
 import Todolist from './pages/Todolist/Todolist.js';
@@ -28,7 +28,7 @@ export default class App extends Component {
                             <Route path='redux-bookingmovies' element={<BookingMovies />}></Route>
                             <Route path='redux-burger' element={<BurgerBuilder />}></Route>
                             <Route path='redux-baucua' element={<BauCua />}></Route>
-                            <Route path='redux-oantuxi' element={<OanTuXi />}></Route>
+                            <Route path='redux-oantuxi' element={<GameOanTuXi />}></Route>
                             <Route path='redux-xucxac' element={<GameXucXac />}></Route>
                             <Route path='redux-shoppingcart' element={<ShoppingCart />}></Route>
                             <Route path='redux-todolist' element={<Todolist />}></Route>

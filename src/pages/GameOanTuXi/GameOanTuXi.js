@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class OanTuXi extends Component {
+export default class GameOanTuXi extends Component {
     render() {
         return <div>OanTuXi</div>;
     }
