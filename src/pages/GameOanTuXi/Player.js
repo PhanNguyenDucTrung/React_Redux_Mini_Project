@@ -19,9 +19,15 @@ export class Player extends Component {
 
                 <div className='row'>
                     {this.props.mangDatCuoc.map((item, index) => {
+                        let border = {};
+                        if (item.datCuoc) {
+                            border = { border: '3px solid orange' };
+                        }
+
                         return (
                             <div className='col-4' key={index}>
                                 <button
+                                    style={border}
                                     className='btnItem'
                                     onClick={() => {
                                         this.props.selectItem(item.ma);

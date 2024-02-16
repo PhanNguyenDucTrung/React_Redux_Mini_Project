@@ -3,8 +3,10 @@ import './GameOanTuXi.css';
 import Player from './Player.js';
 import Computer from './Computer.js';
 import KetQuaTroChoi from './KetQuaTroChoi.js';
+import { connect } from 'react-redux';
+import { playGame } from '../../redux/reducers/gameOanTuXiSlice.js';
 
-export default class GameOanTuXi extends Component {
+export class GameOanTuXi extends Component {
     render() {
         return (
             <div className='gameOanTuXi'>
@@ -14,7 +16,13 @@ export default class GameOanTuXi extends Component {
                     </div>
                     <div className='col-4'>
                         <KetQuaTroChoi />
-                        <button className='btn btn-success p-3 mt-5'>Play game</button>
+                        <button
+                            className='btn btn-success p-3 mt-5'
+                            onClick={() => {
+                                this.props.playGame();
+                            }}>
+                            Play game
+                        </button>
                     </div>
                     <div className='col-4'>
                         <Computer />
@@ -24,3 +32,9 @@ export default class GameOanTuXi extends Component {
         );
     }
 }
+
+const mapDispatchToProps = {
+    playGame,
+};
+
+export default connect(null, mapDispatchToProps)(GameOanTuXi);
