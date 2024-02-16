@@ -1,7 +1,29 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import '../assests/css/Header.css';
 
 export default class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isVisible: false,
+        };
+    }
+
+    checkMousePosition = e => {
+        // Show header if mouse is within 50px from the top
+        if (e.clientY < 50) {
+            this.setState({ isVisible: true });
+        } else if (e.clientY < 300 && this.state.isVisible === true) {
+        } else {
+            this.setState({ isVisible: false });
+        }
+    };
+
+    componentDidMount() {
+        window.addEventListener('mousemove', this.checkMousePosition);
+    }
+
     handleActiveClassName = () => {
         return ({ isActive }) => (isActive ? 'dropdown-item bg-warning text-light fw-bold' : 'dropdown-item');
     };
@@ -12,7 +34,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div>
+            <div className={`header ${this.state.isVisible ? 'visible' : ''}`}>
                 <nav className='navbar navbar-expand-lg bg-dark'>
                     <div className='container-fluid'>
                         <NavLink className='navbar-brand text-light' to='/'>
