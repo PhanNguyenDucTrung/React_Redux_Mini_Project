@@ -8,13 +8,11 @@ const shoppingCartSlice = createSlice({
             const itemIndex = state.findIndex(item => item.id === action.payload.id);
 
             if (itemIndex >= 0) {
-                // We're "mutating" the existing item by creating a new object based on the old one
                 state[itemIndex] = {
                     ...state[itemIndex],
                     quantity: state[itemIndex].quantity + 1,
                 };
             } else {
-                // We're adding a new item to the cart
                 state.push({ ...action.payload, quantity: 1 });
             }
         },
