@@ -67,6 +67,11 @@ export default class Header extends Component {
                                         Admin
                                     </NavLink>
                                 </li>
+                                <li className='nav-item'>
+                                    <NavLink className='nav-link text-light' to='learning/styled-component-demo'>
+                                        StyledComponent
+                                    </NavLink>
+                                </li>
                                 <li className='nav-item dropdown'>
                                     <NavLink
                                         to=''

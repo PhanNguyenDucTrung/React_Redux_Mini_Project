@@ -15,13 +15,13 @@ import Products from './pages/Admin/Products/Products.jsx';
 import BurgerBuilder from './pages/BurgerBuilder/BurgerBuilder.js';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
-import DemoStyleComponet from './pages/StyledComponent/DemoStyleComponet.js';
+import DemoStyledComponent from './pages/StyledComponent/DemoStyledComponents/DemoStyledComponent.js';
 export default class App extends Component {
     render() {
         return (
             <Provider store={store}>
                 <BrowserRouter>
-                    <Route>
+                    <Routes>
                         <Route path='' element={<HomeTemplate />}>
                             <Route index path='' element={<Home />}></Route>
                             <Route path='home' element={<Home />}></Route>
@@ -41,8 +41,8 @@ export default class App extends Component {
                             <Route path='products' element={<Products />}></Route>
                         </Route>
 
-                        <Route path='/fullpage-todolist' element={<DemoStyleComponet />}></Route>
-                    </Route>
+                        <Route path='/learning/styled-component-demo' element={<DemoStyledComponent />}></Route>
+                    </Routes>
                 </BrowserRouter>
             </Provider>
         );
