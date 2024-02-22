@@ -16,6 +16,9 @@ import BurgerBuilder from './pages/BurgerBuilder/BurgerBuilder.js';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import DemoStyledComponent from './pages/StyledComponent/DemoStyledComponents/DemoStyledComponent.js';
+import LifeCycleReact from './pages/LifeCycleReact/LifeCycleReact.js';
+import { DemoTheme } from './pages/StyledComponent/Themes/DemoTheme.js';
+import { Outlet } from 'react-router-dom';
 export default class App extends Component {
     render() {
         return (
@@ -32,16 +35,20 @@ export default class App extends Component {
                             <Route path='redux-oantuxi' element={<GameOanTuXi />}></Route>
                             <Route path='redux-xucxac' element={<GameXucXac />}></Route>
                             <Route path='redux-shoppingcart' element={<ShoppingCart />}></Route>
-                            <Route path='redux-todolist' element={<Todolist />}></Route>
+
                             <Route path='*' element={<Navigate to={''} />}></Route>
                         </Route>
 
+                        <Route path='redux-todolist' element={<Todolist />}></Route>
                         <Route path='/admin' element={<AdminTemplate />}>
                             <Route path='users' element={<Users />}></Route>
                             <Route path='products' element={<Products />}></Route>
                         </Route>
-
-                        <Route path='/learning/styled-component-demo' element={<DemoStyledComponent />}></Route>
+                        <Route path='/learning' element={<Outlet></Outlet>}>
+                            <Route path='styled-component-demo' element={<DemoStyledComponent />}></Route>
+                            <Route path='styled-component-demo2' element={<DemoTheme />}></Route>
+                            <Route path='life-cycle-react-demo' element={<LifeCycleReact />}></Route>
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </Provider>

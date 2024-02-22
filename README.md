@@ -21,3 +21,6 @@ Contents (Steps)
 -   Tạo thư mục pages
 -   Tạo thư mục templates
 -   Tạo thư mục redux - Tạo file store.js
+-   Project Game oẳn tù xì: Thực hành ReduxToolkit
+-   Project Todolist
+    -   Thực hành Styled Component, Thực hành LifeCycle

@@ -3,6 +3,7 @@ import burgerReducer from './burgerSlice.js';
 import shoppingCartReducer from './shoppingCartSlice.js';
 import gameXucXacReducer from './gameXucXacSlice.js';
 import gameOanTuXiReducer from './gameOanTuXiSlice.js';
+import toDoListReducer from './toDoListSlice.js';
 
 // store tổng ứng dụng
 const rootReducer = combineReducers({
@@ -11,7 +12,7 @@ const rootReducer = combineReducers({
     shoppingCart: shoppingCartReducer,
     gameXucXac: gameXucXacReducer,
     gameOanTuXi: gameOanTuXiReducer,
-
+    toDoList: toDoListReducer,
     // bauCua: bauCuaSlice.reducer,
 
     // gameBauCua: gameBauCuaSlice.reducer,

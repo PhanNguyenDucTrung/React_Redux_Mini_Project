@@ -57,20 +57,40 @@ export default class Header extends Component {
                                         Home
                                     </NavLink>
                                 </li>
-                                <li className='nav-item'>
-                                    <NavLink className='nav-link text-light' to='/'>
-                                        Link
-                                    </NavLink>
-                                </li>
+
                                 <li className='nav-item'>
                                     <NavLink className='nav-link text-light' to='admin'>
                                         Admin
                                     </NavLink>
                                 </li>
-                                <li className='nav-item'>
-                                    <NavLink className='nav-link text-light' to='learning/styled-component-demo'>
-                                        StyledComponent
-                                    </NavLink>
+
+                                <li className='nav-item dropdown'>
+                                    <a
+                                        href='/'
+                                        className='nav-link dropdown-toggle text-light'
+                                        role='button'
+                                        data-bs-toggle='dropdown'
+                                        aria-expanded='false'>
+                                        Learning
+                                    </a>
+
+                                    <ul className='dropdown-menu'>
+                                        <li className='nav-item'>
+                                            <NavLink className='nav-link' to='learning/styled-component-demo'>
+                                                StyledComponent
+                                            </NavLink>
+                                        </li>
+                                        <li className='nav-item'>
+                                            <NavLink className='nav-link' to='learning/styled-component-demo2'>
+                                                StyledComponentTheme
+                                            </NavLink>
+                                        </li>
+                                        <li className='nav-item'>
+                                            <NavLink className='nav-link' to='learning/life-cycle-react-demo'>
+                                                LifeCycleReact
+                                            </NavLink>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li className='nav-item dropdown'>
                                     <NavLink
