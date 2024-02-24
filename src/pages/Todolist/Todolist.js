@@ -26,14 +26,20 @@ export class Todolist extends Component {
         taskId: -1,
     };
 
+    // static getDerivedStateFromProps(newProps, currentState) {
+    //     console.log('newProps', newProps);
+    //     console.log('currentState', currentState);
+    //     if (newProps.taskEdit !== null && newProps.taskEdit.id !== currentState.taskId) {
+    //         console.log('run');
+    //         return { taskId: newProps.taskEdit.id, taskName: newProps.taskEdit.name };
+    //     }
+
+    //     return null;
+    // }
+
     static getDerivedStateFromProps(newProps, currentState) {
         console.log('newProps', newProps);
         console.log('currentState', currentState);
-        if (newProps.taskEdit !== null && newProps.taskEdit.id !== currentState.taskId) {
-            console.log('run');
-            return { taskId: newProps.taskEdit.id, taskName: newProps.taskEdit.name };
-        }
-
         return null;
     }
 
@@ -54,6 +60,10 @@ export class Todolist extends Component {
                                 className='ms-1'
                                 onClick={() => {
                                     this.props.editTask(task);
+
+                                    if (this.state.taskId === task.id) {
+                                        this.setState({ taskName: task.name });
+                                    }
                                 }}>
                                 <i className='fa fa-edit'></i>
                             </Button>
@@ -122,7 +132,7 @@ export class Todolist extends Component {
                         }}>
                         {this.renderTheme()}
                     </Dropdown>
-                    <Heading3>Todo List</Heading3>
+                    <Heading3 className='mt-2'>Todo List</Heading3>
                     <TextField
                         label='Task name'
                         className='w-50'
@@ -136,24 +146,27 @@ export class Todolist extends Component {
                     />
 
                     <Button
-                        className='ms-2'
+                        className={'ms-2' + (this.state.taskId !== -1 ? ' d-none' : '')}
                         onClick={() => {
                             this.props.addTask({
                                 id: Date.now(),
                                 isCompleted: false,
-                                name: this.state.taskName,
+                                name: this.state.taskName === '' ? 'New task' : this.state.taskName,
                             });
+
+                            this.setState({ taskName: '', taskId: -1 });
                         }}>
                         <i className='fa fa-plus'></i>Add task
                     </Button>
                     <Button
-                        className='ms-2'
+                        className={'ms-2' + (this.state.taskId === -1 ? ' d-none' : '')}
                         onClick={() => {
                             this.props.updateTask({
                                 id: this.state.taskId,
                                 name: this.state.taskName,
                                 isCompleted: false,
                             });
+                            this.setState({ taskName: '', taskId: -1 });
                         }}>
                         <i className='fa fa-upload'></i>
                         Update
@@ -171,6 +184,16 @@ export class Todolist extends Component {
                 </Container>
             </ThemeProvider>
         );
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.taskEdit !== this.props.taskEdit) {
+            this.setState({
+                taskId: this.props.taskEdit.id,
+                taskName: this.props.taskEdit.name,
+            });
+        }
+        console.log(prevState, this.state);
     }
 }
 

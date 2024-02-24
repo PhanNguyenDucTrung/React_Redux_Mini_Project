@@ -19,6 +19,7 @@ import DemoStyledComponent from './pages/StyledComponent/DemoStyledComponents/De
 import LifeCycleReact from './pages/LifeCycleReact/LifeCycleReact.js';
 import { DemoTheme } from './pages/StyledComponent/Themes/DemoTheme.js';
 import { Outlet } from 'react-router-dom';
+import UnsplashApp from '../src/pages/unsplash-images/App.jsx';
 export default class App extends Component {
     render() {
         return (
@@ -49,6 +50,7 @@ export default class App extends Component {
                             <Route path='styled-component-demo2' element={<DemoTheme />}></Route>
                             <Route path='life-cycle-react-demo' element={<LifeCycleReact />}></Route>
                         </Route>
+                        <Route path='unsplash-images' element={<UnsplashApp />}></Route>
                     </Routes>
                 </BrowserRouter>
             </Provider>

@@ -160,6 +160,25 @@ export default class Header extends Component {
                                         </li>
                                     </ul>
                                 </li>
+
+                                <li className='nav-item dropdown'>
+                                    <a
+                                        href='/'
+                                        className='nav-link dropdown-toggle text-light'
+                                        role='button'
+                                        data-bs-toggle='dropdown'
+                                        aria-expanded='false'>
+                                        Projects
+                                    </a>
+
+                                    <ul className='dropdown-menu'>
+                                        <li className='nav-item'>
+                                            <NavLink className='nav-link' to='unsplash-images'>
+                                                Unsplash Images
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>

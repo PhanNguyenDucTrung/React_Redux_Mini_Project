@@ -15,8 +15,8 @@ export default class LifeCycleReact extends Component {
     // }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        console.log('getDerivedStateFromProps');
-        console.log('NextProps: ', nextProps, prevState);
+        // console.log('getDerivedStateFromProps');
+        // console.log('NextProps: ', nextProps, prevState);
 
         return null;
     }

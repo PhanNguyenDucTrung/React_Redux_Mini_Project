@@ -14,9 +14,7 @@ const rootReducer = combineReducers({
     gameOanTuXi: gameOanTuXiReducer,
     toDoList: toDoListReducer,
     // bauCua: bauCuaSlice.reducer,
-
     // gameBauCua: gameBauCuaSlice.reducer,
-    // gameDanGian: gameDanGianSlice.reducer,
     // datVe
 });
 export default rootReducer;

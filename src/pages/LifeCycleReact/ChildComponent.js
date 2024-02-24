@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 export default class ChildComponent extends Component {
     UNSAFE_componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
-        console.log('Component con da nhan duoc props tu component cha');
+        // console.log(nextProps);
+        // console.log('Component con da nhan duoc props tu component cha');
     }
     render() {
         console.log('render in child component');
