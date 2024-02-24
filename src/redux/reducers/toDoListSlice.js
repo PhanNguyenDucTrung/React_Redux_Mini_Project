@@ -31,7 +31,7 @@ const toDoListSlice = createSlice({
     },
     reducers: {
         changeTheme: (state, action) => {
-            const currentTheme = arrTheme.find(theme => theme.id == action.payload);
+            const currentTheme = arrTheme.find(theme => theme.id === action.payload);
             state.themeToDoList = currentTheme.theme;
         },
         addTask: (state, action) => {

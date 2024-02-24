@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { Container } from './Containers/Container.js';
 import { ThemeProvider } from 'styled-components';
-import { ToDoListDarkTheme } from './Themes/ToDoListDarkTheme.js';
-import { ToDoListLightTheme } from './Themes/ToDoListLightTheme.js';
-import { ToDoListPrimaryTheme } from './Themes/ToDoListPrimaryTheme.js';
 import { Dropdown } from './Components/Dropdown.js';
-import { Heading1, Heading2, Heading3, Heading4 } from './Components/Heading.js';
-import { TextField, Label, Input } from './Components/TextField.js';
+import { Heading3 } from './Components/Heading.js';
+import { TextField } from './Components/TextField.js';
 import { Button } from './Components/Button.js';
-import { Table, Thead, Tbody, Td, Th, Tr } from './Components/Table.js';
+import { Table, Thead, Th, Tr } from './Components/Table.js';
 import { connect } from 'react-redux';
 import {
     changeTheme,
